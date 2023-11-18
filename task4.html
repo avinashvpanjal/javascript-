@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script ="javascript">
+        function validateForm() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username === "" || password === "") {
+        alert("Please enter your username and password");
+        return false;
+    }
+
+    // Password should contain at least 8 characters
+    if (password.length < 8) {
+        alert("Password should contain at least 8 characters");
+        return false;
+    }
+
+    // Email should contain @ symbol (simple check for a basic email format)
+    if (username.indexOf("@") === -1) {
+        alert("Invalid email format");
+        return false;
+    }
+
+    // If all conditions pass, allow form submission
+    return true;
+}
+    </script>
+    <style>
+       body{font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #777171;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(28, 218, 117, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 50%; /* Adjusted width to 80% */
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #0b0a0a;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #1737ad;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0e54ab;
+}
+
+/* Add additional
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js4.css">
+    <title>Task4js</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form onsubmit="return validateForm()" action="log.html">
+        <input id="username" type="text" placeholder="Username"/>
+        <br>
+        <input id="password" type="password" placeholder="Password"/>
+        <br>
+        <button id="submit" type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>

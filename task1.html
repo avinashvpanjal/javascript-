@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Dice Roller</title>
+</head>
+<body>
+    <h1>Random Dice Roller</h1>
+    <p>Click the button to roll a six-sided die:</p>
+    <button onclick="rollDice()">Roll Dice</button>
+    <p id="result"></p>
+
+    <script>
+        function rollDice() {
+            
+            var randomNumber = Math.floor(Math.random() * 6) + 1;
+            var resultElement = document.getElementById("result");
+
+            resultElement.innerHTML = "You rolled a " + randomNumber;
+        }
+    </script>
+</body>
+</html>

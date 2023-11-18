@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EMI Calculator</title>
+</head>
+<body>
+    <h1>EMI Calculator</h1>
+    <label for="loanAmount">Loan Amount (in USD):</label>
+    <input type="number" id="loanAmount" placeholder="Enter loan amount"><br>
+
+    <label for="interestRate">Annual Interest Rate (%):</label>
+    <input type="number" id="interestRate" placeholder="Enter annual interest rate"><br>
+
+    <label for="loanTenure">Loan Tenure (in months):</label>
+    <input type="number" id="loanTenure" placeholder="Enter loan tenure"><br>
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateEMI() {
+            var loanAmount = parseFloat(document.getElementById("loanAmount").value);
+            var interestRate = parseFloat(document.getElementById("interestRate").value);
+            var loanTenure = parseFloat(document.getElementById("loanTenure").value);
+
+            
+
+           
+            var monthlyInterestRate = (interestRate / 12) / 100;
+            var numberOfMonths = loanTenure;
+
+           
+            var emi = loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfMonths) / (Math.pow(1 + monthlyInterestRate, numberOfMonths) - 1);
+
+            document.getElementById("result").innerHTML = "Your EMI is: $" + emi.toFixed(2) + " per month";
+        }
+    </script>
+</body>
+</html>
